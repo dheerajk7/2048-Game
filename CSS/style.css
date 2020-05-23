@@ -216,3 +216,7 @@ button
 	box-shadow:0px 0px 0px 0px;
 	border: 0;
 }
+
+button:focus{
+	outline: none;
+}
