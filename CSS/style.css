@@ -68,7 +68,7 @@ div
 {
 	#main-container
 	{
-		width: 98%;
+		width: 100%;
 	}
 }
 
@@ -86,7 +86,7 @@ div
 
 #heading-text
 {
-	font-size: 4.5rem;
+	font-size: 3.5rem;
 	font-weight: bolder;
 	font-family: cursive;
 	font-style: oblique;
