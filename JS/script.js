@@ -227,3 +227,87 @@ class Game
 }
 
 
+g = new Game();
+g.addNewTwo();
+var cell_1 = document.getElementById('cell-1');
+var cell_2 = document.getElementById('cell-2');
+var cell_3 = document.getElementById('cell-3');
+var cell_4 = document.getElementById('cell-4');
+var cell_5 = document.getElementById('cell-5');
+var cell_6 = document.getElementById('cell-6');
+var cell_7 = document.getElementById('cell-7');
+var cell_8 = document.getElementById('cell-8');
+var cell_9 = document.getElementById('cell-9');
+var cell_10 = document.getElementById('cell-10');
+var cell_11 = document.getElementById('cell-11');
+var cell_12 = document.getElementById('cell-12');
+var cell_13 = document.getElementById('cell-13');
+var cell_14 = document.getElementById('cell-14');
+var cell_15 = document.getElementById('cell-15');
+var cell_16 = document.getElementById('cell-16');
+
+function displayOnGrid()
+{
+    cell_1.innerText = g.matrix[0][0];
+    cell_2.innerText = g.matrix[0][1];
+    cell_3.innerText = g.matrix[0][2];
+    cell_4.innerText = g.matrix[0][3];
+    cell_5.innerText = g.matrix[1][0];
+    cell_6.innerText = g.matrix[1][1];
+    cell_7.innerText = g.matrix[1][2];
+    cell_8.innerText = g.matrix[1][3];
+    cell_9.innerText = g.matrix[2][0];
+    cell_10.innerText = g.matrix[2][1];
+    cell_11.innerText = g.matrix[2][2];
+    cell_12.innerText = g.matrix[2][3];
+    cell_13.innerText = g.matrix[3][0];
+    cell_14.innerText = g.matrix[3][1];
+    cell_15.innerText = g.matrix[3][2];
+    cell_16.innerText = g.matrix[3][3];
+}
+
+displayOnGrid();
+var leftButton = document.getElementById('left');
+var rightButton = document.getElementById('right');
+var upButton = document.getElementById('up');
+var downButton = document.getElementById('down');
+
+leftButton.addEventListener('click',function()
+{
+    var changed = g.left_move();
+    if(changed)
+    {
+        g.addNewTwo();
+        displayOnGrid();
+    }
+});
+
+rightButton.addEventListener('click',function()
+{
+    var changed = g.right_move();
+    if(changed)
+    {
+        g.addNewTwo();
+        displayOnGrid();
+    }
+});
+
+upButton.addEventListener('click',function()
+{
+    var changed = g.up_move();
+    if(changed)
+    {
+        g.addNewTwo();
+        displayOnGrid();
+    }
+});
+
+downButton.addEventListener('click',function()
+{
+    var changed = g.down_move();
+    if(changed)
+    {
+        g.addNewTwo();
+        displayOnGrid();
+    }
+});
