@@ -274,3 +274,44 @@ button:focus{
 {
 	color: turquoise;
 }
+
+#game-status-container
+{
+	background-image: linear-gradient(120deg,#e42828de,#ff6a6a,#ff7b72,#ffb2cc);
+	height: 0;
+	display: none;
+	width: 90%;
+	position: absolute;
+	left: 5%;
+	top: 30%;
+	border-radius: 20px;
+	transition: 1s all ease-in-out;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 1px 0px 5px 6px midnightblue;
+}
+
+#game-status
+{
+		color: #042875;
+		/* position: relative; */
+		/* top: 25%; */
+		font-weight: bolder;
+		font-family: cursive;
+		padding: 2%;
+		border: 2px solid red;
+		border-radius: 30px;
+		background-color: aquamarine;
+		font-size: 4.3rem;
+		opacity: 0;
+		transition: 1s all ease-in-out;
+}
+
+@media screen and (max-width: 750px)
+{
+	#game-status
+	{
+		font-size: 3.5rem;
+	}
+}

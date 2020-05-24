@@ -17,6 +17,12 @@ class Game
         }
     }
 
+    //resetting game to start position
+    resetMatrix()
+    {
+        this.matrix = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+    }
+
     //getting random position between 0 to 3
     getRandom()
     {
@@ -41,7 +47,7 @@ class Game
     //getting current state of game whether we have won lost or game is still going on
     get_current_state()
     {
-        //anywhere 2048 is prensent
+        //anywhere 2048 is present
         for(var i=0;i<4;i++)
         {
             for(var j=0;j<4;j++)
@@ -442,6 +448,31 @@ function displayOnGrid()
 
 displayOnGrid();
 
+function setStatusDisplayNone()
+{
+    var statusBox = document.getElementById('game-status-container');
+    statusBox.style.display = 'none';
+}
+
+function showStatus(msg)
+{
+    var statusBox = document.getElementById('game-status-container');
+    statusBox.style.display = 'flex';
+    statusBox.innerHTML = '<span id="game-status"> '+ msg + '</span>';
+    let height = 0;
+    while(height < 25)
+    {
+        setTimeout(() => {
+            statusBox.style.height = height +'vh';
+        },100);
+        height = height + 1;
+    }
+    setTimeout(()=>
+    {
+        document.getElementById('game-status').style.opacity = '1';
+    },1000);    
+}
+
 //fetching button
 var leftButton = document.getElementById('left');
 var rightButton = document.getElementById('right');
@@ -455,8 +486,19 @@ var leftButtonMove = function()
     if(changed)
     {
         g.addNewTwo();
-        displayOnGrid();
+        var result = g.get_current_state();
+        if(result === "WON")
+        {
+            showStatus("YOU WON");
+            g.resetMatrix();
+        }
+        else if(result === "LOST")
+        {
+            showStatus("YOU LOST");
+            g.resetMatrix();
+        }
     }
+    displayOnGrid();
 };
 
 var rightButtonMove = function()
@@ -465,8 +507,19 @@ var rightButtonMove = function()
     if(changed)
     {
         g.addNewTwo();
-        displayOnGrid();
+        var result = g.get_current_state();
+        if(result === "WON")
+        {
+            showStatus("YOU WON");
+            g.resetMatrix();
+        }
+        else if(result === 'LOST')
+        {
+            showStatus("YOU LOST");
+            g.resetMatrix();
+        }
     }
+    displayOnGrid();
 };
 
 var upButtonMove = function()
@@ -475,8 +528,19 @@ var upButtonMove = function()
     if(changed)
     {
         g.addNewTwo();
-        displayOnGrid();
+        var result = g.get_current_state();
+        if(result === "WON")
+        {
+            showStatus("YOU WON");
+            g.resetMatrix();
+        }
+        else if(result === 'LOST')
+        {
+            showStatus("YOU LOST");
+            g.resetMatrix();
+        }
     }
+    displayOnGrid();
 };
 
 var downButtonMove = function()
@@ -485,8 +549,19 @@ var downButtonMove = function()
     if(changed)
     {
         g.addNewTwo();
-        displayOnGrid();
+        var result = g.get_current_state();
+        if(result === "WON")
+        {
+            showStatus("YOU WON");
+            g.resetMatrix();
+        }
+        else if(result === 'LOST')
+        {
+            showStatus("YOU LOST");
+            g.resetMatrix();
+        }
     }
+    displayOnGrid();
 };
 
 //mouse events
