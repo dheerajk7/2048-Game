@@ -226,9 +226,13 @@ class Game
     }
 }
 
-
+//creating matrix for game
 g = new Game();
+
+//adding first two in game
 g.addNewTwo();
+
+//getting all the cells
 var cell_1 = document.getElementById('cell-1');
 var cell_2 = document.getElementById('cell-2');
 var cell_3 = document.getElementById('cell-3');
@@ -246,33 +250,154 @@ var cell_14 = document.getElementById('cell-14');
 var cell_15 = document.getElementById('cell-15');
 var cell_16 = document.getElementById('cell-16');
 
+var colorSet = { 2: {}, 4:{},8:{}, 16:{}, 32:{}, 64:{}, 128:{}, 256:{}, 512:{}, 1024:{}, 2048:{}};
+
+
+//updating cell value
 function displayOnGrid()
 {
-    cell_1.innerText = g.matrix[0][0];
-    cell_2.innerText = g.matrix[0][1];
-    cell_3.innerText = g.matrix[0][2];
-    cell_4.innerText = g.matrix[0][3];
-    cell_5.innerText = g.matrix[1][0];
-    cell_6.innerText = g.matrix[1][1];
-    cell_7.innerText = g.matrix[1][2];
-    cell_8.innerText = g.matrix[1][3];
-    cell_9.innerText = g.matrix[2][0];
-    cell_10.innerText = g.matrix[2][1];
-    cell_11.innerText = g.matrix[2][2];
-    cell_12.innerText = g.matrix[2][3];
-    cell_13.innerText = g.matrix[3][0];
-    cell_14.innerText = g.matrix[3][1];
-    cell_15.innerText = g.matrix[3][2];
-    cell_16.innerText = g.matrix[3][3];
+    if(g.matrix[0][0] != 0)
+    {
+        cell_1.innerText = g.matrix[0][0];
+    }
+    else
+    {
+        cell_1.innerText = '';
+    }
+    if(g.matrix[0][1] != 0)
+    {
+        cell_2.innerText = g.matrix[0][1];
+    }
+    else
+    {
+        cell_2.innerText = '';
+    }
+    if(g.matrix[0][2] != 0)
+    {
+        cell_3.innerText = g.matrix[0][2];
+    }
+    else
+    {
+        cell_3.innerText = '';
+    }
+    if(g.matrix[0][3] != 0)
+    {
+        cell_4.innerText = g.matrix[0][3];
+    }
+    else
+    {
+        cell_4.innerText = '';
+    }
+
+    if(g.matrix[1][0] != 0)
+    {
+        cell_5.innerText = g.matrix[1][0];
+    }
+    else
+    {
+        cell_5.innerText = '';
+    }
+    if(g.matrix[1][1] != 0)
+    {
+        cell_6.innerText = g.matrix[1][1];
+    }
+    else
+    {
+        cell_6.innerText = '';
+    }
+    if(g.matrix[1][2] != 0)
+    {
+        cell_7.innerText = g.matrix[1][2];
+    }
+    else
+    {
+        cell_7.innerText = '';
+    }
+    if(g.matrix[1][3] != 0)
+    {
+        cell_8.innerText = g.matrix[1][3];
+    }
+
+    else
+    {
+        cell_8.innerText = '';
+    }
+    if(g.matrix[2][0] != 0)
+    {
+        cell_9.innerText = g.matrix[2][0];
+    }
+    else
+    {
+        cell_9.innerText = '';
+    }
+    if(g.matrix[2][1] != 0)
+    {
+        cell_10.innerText = g.matrix[2][1];
+    }
+    else
+    {
+        cell_10.innerText = '';
+    }
+    if(g.matrix[2][2] != 0)
+    {
+        cell_11.innerText = g.matrix[2][2];
+    }
+    else
+    {
+        cell_11.innerText = '';
+    }
+    if(g.matrix[2][3] != 0)
+    {
+        cell_12.innerText = g.matrix[2][3];
+    }
+    else
+    {
+        cell_12.innerText = '';
+    }
+    if(g.matrix[3][0] != 0)
+    {
+        cell_13.innerText = g.matrix[3][0];
+    }
+    else
+    {
+        cell_13.innerText = '';
+    }
+    if(g.matrix[3][1] != 0)
+    {
+        cell_14.innerText = g.matrix[3][1];
+    }
+    else
+    {
+        cell_14.innerText = '';
+    }
+    if(g.matrix[3][2] != 0)
+    {
+        cell_15.innerText = g.matrix[3][2];
+    }
+    else
+    {
+        cell_15.innerText = '';
+    }
+    if(g.matrix[3][3] != 0)
+    {
+        cell_16.innerText = g.matrix[3][3];
+    }
+    else
+    {
+        cell_16.innerText = '';
+    }
 }
 
 displayOnGrid();
+
+//fetching button
 var leftButton = document.getElementById('left');
 var rightButton = document.getElementById('right');
 var upButton = document.getElementById('up');
 var downButton = document.getElementById('down');
 
-leftButton.addEventListener('click',function()
+//function to call on pressing various button
+var leftButtonMove = function()
 {
     var changed = g.left_move();
     if(changed)
@@ -280,9 +405,9 @@ leftButton.addEventListener('click',function()
         g.addNewTwo();
         displayOnGrid();
     }
-});
+};
 
-rightButton.addEventListener('click',function()
+var rightButtonMove = function()
 {
     var changed = g.right_move();
     if(changed)
@@ -290,9 +415,9 @@ rightButton.addEventListener('click',function()
         g.addNewTwo();
         displayOnGrid();
     }
-});
+};
 
-upButton.addEventListener('click',function()
+var upButtonMove = function()
 {
     var changed = g.up_move();
     if(changed)
@@ -300,14 +425,42 @@ upButton.addEventListener('click',function()
         g.addNewTwo();
         displayOnGrid();
     }
-});
+};
 
-downButton.addEventListener('click',function()
+var downButtonMove = function()
 {
     var changed = g.down_move();
     if(changed)
     {
         g.addNewTwo();
         displayOnGrid();
+    }
+};
+
+//mouse events
+leftButton.addEventListener('click',leftButtonMove);
+rightButton.addEventListener('click',rightButtonMove);
+upButton.addEventListener('click',upButtonMove);
+downButton.addEventListener('click',downButtonMove);
+
+document.addEventListener('keydown',function(event)
+{
+    var keyCode = event.keyCode;
+    console.log(keyCode);
+    if(keyCode == 38 || keyCode == 87)
+    {
+        upButtonMove();
+    }
+    else if(keyCode == 40 || keyCode == 83)
+    {
+        downButtonMove();
+    }
+    else if(keyCode == 37 || keyCode == 65)
+    {
+        leftButtonMove();
+    }
+    else if(keyCode == 39 || keyCode == 68);
+    {
+        rightButtonMove();
     }
 });

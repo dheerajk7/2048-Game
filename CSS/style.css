@@ -12,15 +12,14 @@ div
 
 #main-container
 {
-	height: 640px;
+	height:100vh;
 	width: 40%;
-	border: 2px solid lightblue;
+	background-image: linear-gradient(120deg,#cdfaca, #87e0d1, #f2f0aa);
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	margin: 0;
 	position: relative;
-	background-color: #f4433629;
 	border-radius: 20px;
 }
 
@@ -32,7 +31,7 @@ div
 	}
 }
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1050px)
 {
 	#main-container
 	{
@@ -64,7 +63,7 @@ div
 	justify-content: center;
 	align-items: center;
 	/*border: 2px solid blue;*/
-	background-color: #ff6600d9;
+	background-image: linear-gradient(-30deg,#ad2885, #ba1619, #fcb103);
 	border-radius: 5px;
 }
 
@@ -74,7 +73,7 @@ div
 	font-weight: bolder;
 	font-family: cursive;
 	font-style: oblique;
-	color: white;
+	color: #efe3e3;
 }
 
 #block-container
@@ -123,13 +122,13 @@ div
 {
 	height: 86%;
 	width: 23%;
-	border: 1px dotted black;
+	/* border: 1px dotted black; */
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 1% 0.5% 1% 0.5%;
-	border-radius: 5px;
+	border-radius: 10px;
 	box-shadow: 0px 2px 0px 0px powderblue;
 	background-color: lightblue;
 }
@@ -183,24 +182,66 @@ div
 
 .button
 {
-	font-size: 1.4rem;
 	padding: 2%;
-	border-radius: 20px;
-	color:blue;
-	background-color: powderblue;
+	border-radius: 15px;
+	background-image: linear-gradient(120deg,blue,#2d0f91,#e82084);
+	border: 0.5px solid linear-gradient(120deg,yellow,cyan);;
+	width: 30%;
+	border: 0px 0px 0px 0px blue;
+}
+
+@media screen and (max-width: 750px)
+{
+	.button
+	{
+		width: 34%;
+	}
+}
+
+@media screen and (max-width: 450px)
+{
+	.button
+	{
+		width: 40%;
+	}
+}
+.text-heading
+{
+	color:lightgoldenrodyellow;
+	font-size: 1.6rem;
 	font-weight: bolder;
+	font-style: normal;
 	font-family: cursive;
-	font-style: oblique;
-	border: 0.5px solid red;
 }
 
 button
 {
-	margin: 0px
-	box-shadow:0px 0px 0px 0px;
-	border: 0;
+	box-shadow: none;
+	border:none;
 }
 
 button:focus{
 	outline: none;
+}
+
+.icon-style
+{
+	font-size: 1.6rem;
+	color: #dfe838;
+	margin: 0% 3% 0% 3%;
+	padding: 2%;
+}
+
+#all-direction-icon
+{
+	font-size: 3.7rem;
+	color: #0a065c;
+}
+
+@media screen and (max-width: 750px)
+{
+	#all-direction-icon
+	{
+		font-size: 2.7rem;
+	}
 }
