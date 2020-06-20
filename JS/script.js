@@ -574,19 +574,19 @@ document.addEventListener('keydown',function(event)
 {
     var keyCode = event.keyCode;
     console.log(keyCode);
-    if(keyCode == 38 || keyCode == 87)
+    if(keyCode === 38 || keyCode === 87)
     {
         upButtonMove();
     }
-    else if(keyCode == 40 || keyCode == 83)
+    else if(keyCode === 40 || keyCode === 83)
     {
         downButtonMove();
     }
-    else if(keyCode == 37 || keyCode == 65)
+    else if(keyCode === 37 || keyCode === 65)
     {
         leftButtonMove();
     }
-    else if(keyCode == 39 || keyCode == 68);
+    else if(keyCode === 39 || keyCode === 68)
     {
         rightButtonMove();
     }
