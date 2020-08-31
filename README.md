@@ -6,4 +6,4 @@
 
 If a move causes three consecutive tiles of the same value to slide together, only the two tiles farthest along the direction of motion will combine. If all four spaces in a row or column are filled with tiles of the same value, a move parallel to that row/column will combine the first two and last two.
 
-The game is won when a tile with a value of 2048 appears on the board, hence the name of the game. 
+The Game is won when a tile with a value of 2048 appears on the board, hence the name of the game. 
